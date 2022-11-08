@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 nav {
     display: flex;
     justify-content: space-around;
@@ -23,6 +27,7 @@ ul {
 
 li {
     margin-right: 25px;
+    position: relative;
 }
 
 a{
@@ -30,6 +35,64 @@ a{
     color: white;
 }
 
+.navlinks a::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: white;
+    transform: scaleX(0);
+    transition: all 0.5s ease;
+}
+
+.navlinks a:hover::after {
+    transform: scaleX(1);
+}
+
+.navlinks .activ {
+    transform: translateX(0%);
+}
+
+
+.hamburger {
+    display: none;
+    position: absolute;
+    right: 40px;
+    top: 35px;
+}
+
+.top , .middle , .bottom {
+    width: 20px;
+    height: 2px;
+    background: white;
+}
+
+.middle {
+    transform: translateY(4px);
+}
+
+.bottom {
+    transform: translateY(8px);
+}
+.open {
+    transform: rotate(90deg);
+}
+
+.open .top {
+
+    transform: rotate(45deg);
+
+}
+
+.open .middle{
+    display: none;
+}
+
+.open .bottom{
+    transform: rotate(-45deg);
+}
 .hero {
     display: flex;
     justify-content: space-around;
@@ -60,5 +123,42 @@ a{
     margin: 10px 15px ;
     cursor: pointer;
     box-shadow: 0 0 2px;
+    transition: all 0.3s ease-in-out;
 
 }
+
+.btn:hover {
+    transform: scale(1.1);
+    /*letter-spacing: 1px; */
+}
+
+@media screen and (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .navlinks {
+        position: absolute;
+        top: 10vh;
+        right: 0;
+        height: 90vh;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        background-color: #1f2937;
+        align-items: center;
+        transform: translateX(100%);
+        transition: all 0.4s ease;
+    }
+
+    .activ {
+        transform: translateX(0%);
+    }
+}
+
