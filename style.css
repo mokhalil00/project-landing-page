@@ -8,6 +8,7 @@ body {
     overflow-x: hidden;
 }
 
+
 nav {
     display: flex;
     justify-content: space-around;
@@ -16,6 +17,14 @@ nav {
     height: 10vh;
     background-color: #1f2937;
     color: white;
+    position: fixed;
+    z-index: 2;
+}
+
+.header-logo {
+    font-size: 24px;
+    color: #f9faf8;
+    text-transform: capitalize;
 }
 
 ul {
@@ -32,7 +41,8 @@ li {
 
 a{
     text-decoration: none;
-    color: white;
+    font-size: 18px;
+    color: #e5e7eb;
 }
 
 .navlinks a::after{
@@ -49,10 +59,6 @@ a{
 
 .navlinks a:hover::after {
     transform: scaleX(1);
-}
-
-.navlinks .activ {
-    transform: translateX(0%);
 }
 
 
@@ -99,6 +105,18 @@ a{
     align-items: center;
     background-color: #1f2937;
     color: white;
+    padding: 50px 20px;
+}
+
+.main-txt {
+    font-size: 48px;
+    font-weight: 900;
+    color: #f9faf8;
+}
+
+.secondary-txt {
+    font-size: 18px;
+    color: #e5e7eb;
 }
 
 .hero-img {
@@ -132,6 +150,104 @@ a{
     /*letter-spacing: 1px; */
 }
 
+.information {
+    margin-top: 20px;
+}
+
+.info-txt {
+    font-size: 36px;
+    font-weight: 900;
+    color: #1f2937;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.card {
+    transition: all 0.4s ease;
+}
+
+.card:hover {
+
+    transform: scale(1.1);
+    cursor: pointer;
+
+}
+
+.card-img {
+    width: 200px;
+    height: 200px;
+    border: 4px solid #3882f6;
+    border-radius: 5px;
+    box-shadow: 0 0 5px;
+}
+
+.quote {
+    margin-top: 50px;
+    background-color: #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    position: relative;
+    padding: 20px;
+}
+
+.quote-txt {
+    font-size: 36px;
+    font-weight: 300;
+    color: #1f2937;
+    padding: 15px;
+}
+
+.quote-author {
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+    font-size: 25px;
+}
+
+.call-to-action {
+    padding: 50px;
+}
+
+.sign-up {
+    background-color: #3882f6;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+    width: 70vw;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.action {
+    border: 1px solid #fff;
+}
+
+footer {
+    background-color: #1f2937;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+}
+
+
+
+@media screen and (max-width: 900px){
+    .cards {
+        flex-wrap: wrap;
+    }
+}
+
 @media screen and (max-width: 768px) {
 
     body {
@@ -159,6 +275,28 @@ a{
 
     .activ {
         transform: translateX(0%);
+    }
+
+    .main-txt {
+        font-size: 28px;
+    }
+
+    .hero-img {
+        margin-top: 25px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    .hero-txt {
+        margin-top: 35px;
+    }
+
+    .quote-txt {
+        font-size: 20px;
+    }
+
+    .quote-author{
+        font-size: 15px;
     }
 }
 
